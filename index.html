@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>숫자 입출력</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f2f5;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        input[type="number"] {
+            padding: 10px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>숫자 입력하기</h2>
+        <p>숫자를 입력하고 확인 버튼을 누르세요.</p>
+        
+        <input type="number" id="numberInput" placeholder="여기에 숫자 입력">
+        <button id="submitButton">확인</button>
+        
+        <p id="result"></p>
+    </div>
+
+    <script>
+        const numberInput = document.getElementById('numberInput');
+        const submitButton = document.getElementById('submitButton');
+        const resultParagraph = document.getElementById('result');
+
+        submitButton.addEventListener('click', () => {
+            const inputValue = numberInput.value;
+
+            if (inputValue === '') {
+                resultParagraph.textContent = '숫자를 먼저 입력해주세요.';
+            } else {
+                resultParagraph.textContent = `입력하신 숫자는 ${inputValue} 입니다.`;
+            }
+        });
+    </script>
+
+</body>
+</html>
